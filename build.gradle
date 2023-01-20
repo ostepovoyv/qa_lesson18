@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.11.1"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+allure {
+    report {
+        version.set("2.19.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.19.0")
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+dependencies {
+    testImplementation (
+            'org.junit.jupiter:junit-jupiter-api:5.9.0',
+            'com.codeborne:selenide:6.10.1',
+            'com.github.javafaker:javafaker:1.0.2',
+            'io.qameta.allure:allure-selenide:2.19.0',
+            'org.junit.jupiter:junit-jupiter:5.9.0',
+            'org.slf4j:slf4j-simple:1.7.32',
+            'io.github.bonigarcia:webdrivermanager:5.2.1',
+            'org.aeonbits.owner:owner:1.0.12',
+            'io.rest-assured:rest-assured:5.3.0',
+            'io.qameta.allure:allure-rest-assured:2.19.0',
+            'com.fasterxml.jackson.core:jackson-databind:2.14.1'
+    )
+    testRuntimeOnly (
+            'org.junit.jupiter:junit-jupiter-engine:5.9.0',
+            'org.slf4j:slf4j-simple:2.0.5'
+    )
+
+    testCompileOnly (
+            'org.projectlombok:lombok:1.18.24'
+    )
+
+    testAnnotationProcessor (
+            'org.projectlombok:lombok:1.18.24'
+    )
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
+
+help {
+    doFirst {
+        println ""
+        println "************************************************************************ "
+        println "***                           Hello                                  *** "
+        println "************************************************************************ "
+        println ""
+    }
+}
