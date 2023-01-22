@@ -1,6 +1,6 @@
 package in.reqres.data.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 
@@ -12,9 +12,9 @@ public class UserData {
 
     private Integer id;
     private String email;
-    @JsonAlias("first_name")
+    @JsonProperty("first_name")
     private String firstName;
-    @JsonAlias("last_name")
+    @JsonProperty("last_name")
     private String lastName;
     private String avatar;
 

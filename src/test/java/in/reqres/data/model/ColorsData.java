@@ -1,6 +1,6 @@
 package in.reqres.data.model;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 @Getter
@@ -13,7 +13,7 @@ public class ColorsData {
     private String name;
     private Integer year;
     private String color;
-    @JsonAlias("pantone_value")
+    @JsonProperty("pantone_value")
     private String pantoneValue;
 
 }

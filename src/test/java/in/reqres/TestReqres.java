@@ -13,6 +13,8 @@ import static in.reqres.config.ProjectConfig.PROPS;
 import static in.reqres.data.Data.*;
 import static in.reqres.data.Endpoints.*;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.hasItem;
+
 
 public class TestReqres {
 
@@ -102,4 +104,17 @@ public class TestReqres {
         users.forEach(x -> Assertions.assertTrue(x.getAvatar().contains(x.getId().toString())));
         Assertions.assertTrue(users.stream().allMatch(x -> x.getEmail().endsWith("@reqres.in")));
     }
+
+    @Test
+    @DisplayName("Проверка email при помощи groovy")
+    public void checEmailTest() {
+        Specifications.installSpecification(Specifications.requestSpec(URL), Specifications.responseSpecOK200());
+        given()
+                .when()
+                .get(API_USERS)
+                .then().log().all()
+                .body("data.findAll{it.email =~/.*?@reqres.in/}.email.flatten()",
+                        hasItem("emma.wong@reqres.in"));
+    }
+
 }
