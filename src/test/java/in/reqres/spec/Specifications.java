@@ -8,13 +8,16 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
+import static in.reqres.helpers.CustomApiListener.withCustomTemplates;
+
 public class Specifications {
 
     public static RequestSpecification requestSpec(String url){
         return new RequestSpecBuilder()
                 .setBaseUri(url)
                 .setContentType(ContentType.JSON)
-                .addFilter(new AllureRestAssured())
+//                .addFilter(new AllureRestAssured())
+                .addFilter(withCustomTemplates())
                 .build();
     }
 

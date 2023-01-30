@@ -1,4 +1,4 @@
-package in.reqres;
+package in.reqres.tests;
 
 import in.reqres.data.model.*;
 import in.reqres.spec.Specifications;
