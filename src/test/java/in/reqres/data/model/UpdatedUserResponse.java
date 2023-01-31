@@ -2,7 +2,6 @@ package in.reqres.data.model;
 
 import lombok.*;
 
-
 @Data
 @Builder
 @NoArgsConstructor
