@@ -6,7 +6,7 @@ import org.aeonbits.owner.ConfigFactory;
 public class ProjectConfig {
 
 
-    public static final PropertiesInterface PROPS = ConfigFactory.create(PropInterfaceTest.class,System.getProperties());
+    public static final PropertiesInterface PROPS = ConfigFactory.create(PropInterfaceTest.class, System.getProperties());
 
     @Config.LoadPolicy(Config.LoadType.MERGE)
     @Config.Sources({"system:properties", "classpath:test.properties"})

@@ -89,7 +89,6 @@ public class TestReqres {
     @Test
     @DisplayName("Проверка статус кода после удаления")
     public void deleteUserTest() {
-//        Specifications.installSpecification(Specifications.requestSpec(URL), Specifications.responseSpecUnique(204));
         given()
                 .spec(requestSpec(URL))
                 .when()
@@ -101,7 +100,6 @@ public class TestReqres {
     @Test
     @DisplayName("Проверка email пользователей на содержание reqres.in и проверка наличия avatar")
     public void checkAvatarAndIdTest() {
-//        Specifications.installSpecification(Specifications.requestSpec(URL), Specifications.responseSpecOK200());
         List<UserData> users = given()
                 .spec(requestSpec(URL))
                 .when()
@@ -117,7 +115,6 @@ public class TestReqres {
     @Test
     @DisplayName("Проверка email при помощи groovy")
     public void checEmailTest() {
-//        Specifications.installSpecification(Specifications.requestSpec(URL), Specifications.responseSpecOK200());
         given()
                 .spec(requestSpec(URL))
                 .when()
