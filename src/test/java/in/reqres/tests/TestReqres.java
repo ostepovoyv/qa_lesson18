@@ -4,10 +4,8 @@ import in.reqres.data.model.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
 import java.util.stream.Collectors;
-
 import static in.reqres.config.ProjectConfig.PROPS;
 import static in.reqres.data.Data.*;
 import static in.reqres.data.Endpoints.*;
@@ -110,7 +108,6 @@ public class TestReqres {
         users.forEach(x -> Assertions.assertTrue(x.getAvatar().contains(x.getId().toString())));
         Assertions.assertTrue(users.stream().allMatch(x -> x.getEmail().endsWith("@reqres.in")));
     }
-
 
     @Test
     @DisplayName("Проверка email при помощи groovy")

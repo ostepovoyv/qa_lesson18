@@ -9,6 +9,7 @@ import lombok.*;
 public class RegistrData {
 
     private String email;
+
     private String password;
 
 }

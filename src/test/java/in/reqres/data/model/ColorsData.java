@@ -10,9 +10,13 @@ import lombok.*;
 public class ColorsData {
 
     private Integer id;
+
     private String name;
+
     private Integer year;
+
     private String color;
+
     @JsonProperty("pantone_value")
     private String pantoneValue;
 

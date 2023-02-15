@@ -9,5 +9,6 @@ import lombok.*;
 public class UpdateUserInfo {
 
     private String name;
+
     private String job;
 }

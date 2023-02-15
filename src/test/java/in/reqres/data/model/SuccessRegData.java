@@ -9,6 +9,7 @@ import lombok.*;
 public class SuccessRegData {
 
     private Integer id;
+
     private String token;
 
 }

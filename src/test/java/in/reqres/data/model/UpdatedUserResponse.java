@@ -9,6 +9,8 @@ import lombok.*;
 public class UpdatedUserResponse {
 
     private String name;
+
     private String job;
+
     private String updatedAt;
 }
